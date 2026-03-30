@@ -18,6 +18,98 @@
             "runOptions": {
                 "runOn": "folderOpen"
             }
+        },
+        {
+            "label": "Contact Rich: Visualize Gear Assembly (4 envs)",
+            "type": "shell",
+            "command": "${ISAACLAB}/isaaclab.sh",
+            "args": [
+                "-p",
+                "${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py",
+                "--task", "Isaac-Deploy-GearAssembly-UR10e-2F140-v0",
+                "--num_envs", "4",
+                "--livestream", "2"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Contact Rich: Train Policy (256 envs, headless)",
+            "type": "shell",
+            "command": "${ISAACLAB}/isaaclab.sh",
+            "args": [
+                "-p",
+                "${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py",
+                "--task", "Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0",
+                "--headless",
+                "--num_envs", "256",
+                "--video",
+                "--video_length", "800",
+                "--video_interval", "5000"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Contact Rich: Play/Validate Policy",
+            "type": "shell",
+            "command": "${ISAACLAB}/isaaclab.sh",
+            "args": [
+                "-p",
+                "${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/play.py",
+                "--task", "Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0",
+                "--num_envs", "4",
+                "--checkpoint", "${input:checkpointPath}",
+                "--livestream", "2"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Contact Rich: TensorBoard",
+            "type": "shell",
+            "command": "${ISAACLAB}/isaaclab.sh",
+            "args": [
+                "-p",
+                "-m", "tensorboard.main",
+                "--logdir", "${input:logdir}"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "checkpointPath",
+            "type": "promptString",
+            "description": "Path to the trained policy checkpoint (.pt file)",
+            "default": "/workspace/logs/rsl_rl/gear_assembly/model.pt"
+        },
+        {
+            "id": "logdir",
+            "type": "promptString",
+            "description": "Path to the TensorBoard log directory",
+            "default": "/workspace/logs/rsl_rl/gear_assembly"
         }
     ]
 }
