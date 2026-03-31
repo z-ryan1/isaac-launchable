@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM nvcr.io/nvidia/isaac-lab:2.3.0
+FROM nvcr.io/nvidia/isaac-lab:2.3.2
 
 RUN apt update && \
     apt install -y \
