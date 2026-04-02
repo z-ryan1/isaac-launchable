@@ -9,7 +9,7 @@ You can monitor training progress in real-time using TensorBoard.
 1. In a terminal, run:
 
     ```bash
-    ${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir /home/ubuntu/Downloads/policy
+    ${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir /home/ubuntu/Downloads/policy --livestream 2
     ```
 
 1. Navigate to the following address in a web browser to visualize the training metrics:
@@ -28,7 +28,8 @@ The policy performance can be validated by deploying it in Isaac Lab by running 
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/play.py \
     --task Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0 \
     --num_envs 4 \
-    --checkpoint /home/ubuntu/Downloads/policy/model.pt
+    --checkpoint /home/ubuntu/Downloads/policy/model.pt \ 
+    --livestream 2
 ```
 
 A successfully trained policy should be able to insert all 3 gears with the gear base in different locations.

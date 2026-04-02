@@ -32,11 +32,3 @@ $ISAACLAB/isaaclab.sh -p $ISAACLAB/scripts/tutorials/00_sim/create_empty.py --li
 ```
 
 For any other Isaac Lab command, append `--livestream 2` to stream the UI. Then open the Web Viewer to see it.
-
-## VS Code Tasks
-
-All key commands for this course are available as VS Code tasks — no need to type them manually:
-
-1. Press `Ctrl+Shift+P`
-2. Type "Tasks: Run Task"
-3. Select from the "Contact Rich:" tasks listed

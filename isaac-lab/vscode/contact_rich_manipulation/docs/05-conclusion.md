@@ -1,12 +1,11 @@
 # Conclusion
 
-In this course, you learned how to train and deploy a reinforcement learning policy (RL) for contact-rich robot manipulation using Isaac Lab and Isaac ROS.
+In this course, you learned how to train a reinforcement learning policy (RL) for contact-rich robot manipulation using Isaac Lab.
 
 ## What You Accomplished
 
 - **Trained a gear insertion RL policy** in Isaac Lab, defining observations, actions, and rewards tailored for precise contact-rich manipulation.
 - **Validated the trained policy** in simulation using Isaac Lab's play mode and TensorBoard to confirm reliable gear insertion across varying conditions.
-- **Deployed the policy via Isaac ROS**, bridging the gap from simulation to a robotics application stack capable of running on real hardware.
 
 ## Key Takeaways
 

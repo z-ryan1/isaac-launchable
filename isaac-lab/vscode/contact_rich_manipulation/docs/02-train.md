@@ -15,7 +15,7 @@ Before diving into the technical details, lets to visualize the task and the sta
 ```bash
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py \
     --task Isaac-Deploy-GearAssembly-UR10e-2F140-v0 \
-    --num_envs 4
+    --num_envs 4 --livestream 2
 ```
 
 **Visual indicators during training:**
@@ -58,47 +58,27 @@ At the end of training, you have a **trained policy**—a neural network that ta
 
 **Policy learning progress (during training):**
 
-<div style="display:none">
-
-![Step 0 video](images/rl-video-step-0.mp4)
-![Step 5000 video](images/rl-video-step-5000.mp4)
-![Step 30000 video](images/rl-video-step-30000.mp4)
-![Step 215000 video](images/rl-video-step-215000.mp4)
-![Step 235000 video](images/rl-video-step-235000.mp4)
-
-</div>
-
 <div align="center">
 
 **Step 0**
 
-<div class="policy-progress-gif">
-<video autoplay loop muted playsinline><source src="../_images/rl-video-step-0.mp4" type="video/mp4"></video>
-</div>
+![Policy progress at step 0](images/rl-video-step-0.gif)
 
 **Step 5,000**
 
-<div class="policy-progress-gif">
-<video autoplay loop muted playsinline><source src="../_images/rl-video-step-5000.mp4" type="video/mp4"></video>
-</div>
+![Policy progress at step 5,000](images/rl-video-step-5000.gif)
 
 **Step 30,000**
 
-<div class="policy-progress-gif">
-<video autoplay loop muted playsinline><source src="../_images/rl-video-step-30000.mp4" type="video/mp4"></video>
-</div>
+![Policy progress at step 30,000](images/rl-video-step-30000.gif)
 
 **Step 215,000**
 
-<div class="policy-progress-gif">
-<video autoplay loop muted playsinline><source src="../_images/rl-video-step-215000.mp4" type="video/mp4"></video>
-</div>
+![Policy progress at step 215,000](images/rl-video-step-215000.gif)
 
 **Step 235,000**
 
-<div class="policy-progress-gif">
-<video autoplay loop muted playsinline><source src="../_images/rl-video-step-235000.mp4" type="video/mp4"></video>
-</div>
+![Policy progress at step 235,000](images/rl-video-step-235000.gif)
 
 </div>
 
@@ -469,10 +449,11 @@ First, launch the training with a small number of environments and visualization
 ```bash
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py \
     --task Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0 \
-    --num_envs 4
+    --num_envs 4 \
+    --livestream 2
 ```
 
-This will open the Isaac Sim viewer where you can observe the training process in real-time.
+This will stream to the Isaac Sim viewer where you can observe the training process in real-time.
 
 **What to Expect**: In the early stages of training, you should see the robots moving around with the gears grasped by the grippers, but they won't be successfully inserting the gears yet. This is expected behavior as the policy is still learning. Once you've verified the environment looks correct, stop the training (Ctrl+C) and proceed to full-scale training.
 
