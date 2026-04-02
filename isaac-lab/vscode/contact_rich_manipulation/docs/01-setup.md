@@ -1,29 +1,42 @@
 # Setup
 
-This course uses an interactive lab environment hosted on the NVIDIA Deep Learning Institute. To set it up:
+This course runs in an NVIDIA Brev environment with Isaac Lab pre-installed. You are already inside the environment if you are reading this in VS Code.
 
-1. **Open the Interactive Environment** — Use the link provided in the course to open the lab setup page. You should see the Lab Instructions with a **START** button, as shown below.
+## Opening the Isaac Sim Web Viewer
 
-   ![Virtual environment setup — click START to begin](images/venv_setup.png)
+The Isaac Sim UI streams to a browser tab via Kit App Streaming. You can open it in two ways:
 
-2. **Start the environment** — Click the ► **START** button. The environment will begin loading; this can take up to **10 minutes** depending on course requirements. Wait until the loading indicator finishes.
+### In a separate tab
+1. Run a command that starts Isaac Sim or Isaac Lab (see below)
+2. Copy your current URL (e.g. `https://isaac.brevlab-1234`)
+3. Open a new tab and change the end to `/viewer/` (e.g. `https://isaac.brevlab-1234/viewer`)
+4. The Isaac Sim UI will appear when the app is ready. The page will say "Waiting for stream..." until then.
 
-3. **Launch the lab** — When loading is complete, use the **LAUNCH** button to open the lab in a new browser tab.
+### Inside VS Code
+1. Run a command that starts Isaac Sim or Isaac Lab (see below)
+2. Press `Ctrl+Shift+P`
+3. Type "Simple Browser: Show"
+4. Enter URL: `/viewer/`
+5. The Isaac Sim UI will appear when the app is ready.
 
-   ![Launch button after environment is ready](images/venv_start.png)
+## Opening a Terminal
 
-4. **Open the Remote Desktop** — In the lab tab you will see a JupyterLab interface. In the left file explorer, click the **notebook** directory, then open the first Jupyter notebook (e.g. `RemoteDesktop.ipynb`). Select the code cell and press **Ctrl+Enter** to run it. A link labeled **Open Remote Desktop** will appear; click it to open the main GUI you will use for this course.
+Open a terminal in VS Code with `` Ctrl+` `` or via **Terminal → New Terminal** in the menu.
 
-   ![JupyterLab — notebook directory and Open Remote Desktop link](images/jupyter_env.png)
+## Running Isaac Lab
 
-5. **Click START in the remote desktop** — When the remote desktop opens, you will see a window with a **START** button. Click it to begin.
+You can run any Isaac Lab script with the streaming viewer using:
 
-   ![Click START in the remote desktop](images/venv_start_button.png)
+```console
+$ISAACLAB/isaaclab.sh -p $ISAACLAB/scripts/tutorials/00_sim/create_empty.py --livestream 2
+```
 
-6. **Open Konsole** — You can start a terminal by clicking the menu at the bottom left of the desktop, then clicking **Konsole**.
+For any other Isaac Lab command, append `--livestream 2` to stream the UI. Then open the Web Viewer to see it.
 
-   ![Open Konsole from menu](images/start_konsole.mp4)
+## VS Code Tasks
 
-7. **Open the course docs** — To view the course documentation, click the **DLI** folder on the desktop, then open the **docs** folder, then double-click **index.html**.
+All key commands for this course are available as VS Code tasks — no need to type them manually:
 
-   ![Open course docs — DLI folder, docs, index.html](images/open_docs.mp4)
+1. Press `Ctrl+Shift+P`
+2. Type "Tasks: Run Task"
+3. Select from the "Contact Rich:" tasks listed
