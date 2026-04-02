@@ -8,7 +8,7 @@ This lesson is based on the official Isaac Lab gear assembly tutorial. For compl
 
 ### Visualizing the Environment
 
-![Untrained policy visualization](../images/untrained_viz.gif)
+![Untrained policy visualization](images/untrained_viz.gif)
 
 Before diving into the technical details, lets to visualize the task and the state of the policy at the start of training:
 
@@ -28,7 +28,7 @@ ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/tra
 
 After training is complete, a successful policy will consistently insert the gear onto the shaft with precise alignment and smooth control:
 
-![Gear Insertion Validation](../images/isaaclab_gear_insertion_validation.gif)
+![Gear Insertion Validation](images/isaaclab_gear_insertion_validation.gif)
 
 ## Reinforcement Learning Overview
 
@@ -42,7 +42,7 @@ The policy is the agent's "brain"—a neural network that maps observations to a
 
 **Figure: During Training.**
 
-![Policy Learning Progress](../images/rl_loop.png)
+![Policy Learning Progress](images/rl_loop.png)
 
 </div>
 
@@ -50,7 +50,7 @@ The policy is the agent's "brain"—a neural network that maps observations to a
 
 **Figure: During Inference.**
 
-![Inputs, Outputs, and Training Loop](../images/inputs_outputs_training.png)
+![Inputs, Outputs, and Training Loop](images/inputs_outputs_training.png)
 
 </div>
 
@@ -60,11 +60,11 @@ At the end of training, you have a **trained policy**—a neural network that ta
 
 <div style="display:none">
 
-![Step 0 video](../images/rl-video-step-0.mp4)
-![Step 5000 video](../images/rl-video-step-5000.mp4)
-![Step 30000 video](../images/rl-video-step-30000.mp4)
-![Step 215000 video](../images/rl-video-step-215000.mp4)
-![Step 235000 video](../images/rl-video-step-235000.mp4)
+![Step 0 video](images/rl-video-step-0.mp4)
+![Step 5000 video](images/rl-video-step-5000.mp4)
+![Step 30000 video](images/rl-video-step-30000.mp4)
+![Step 215000 video](images/rl-video-step-215000.mp4)
+![Step 235000 video](images/rl-video-step-235000.mp4)
 
 </div>
 
@@ -227,7 +227,7 @@ class RewardsCfg:
     action_rate = RewTerm(func=mdp.action_rate_l2, weight=-5.0e-06)
 ```
 
-![Reward Function Visualization](../images/rewards.png)
+![Reward Function Visualization](images/rewards.png)
 
 *Visualization of the pose error calculation guiding the policy to align and insert the gear.*
 
@@ -239,7 +239,7 @@ class RewardsCfg:
 - **Action rate penalty** (`weight=-5.0e-06`): Penalizes large changes in actions between timesteps, encouraging smooth movements
 - **keypoint_scale=0.15**: Defines the characteristic distance (15cm) for the reward shaping
 
-![Episode Reward and Reward Components Over Training](../images/rewards_graph.png)
+![Episode Reward and Reward Components Over Training](images/rewards_graph.png)
 
 *Episode reward and individual reward terms (e.g. action rate, end-effector–gear distance) over training steps. The policy improves rapidly at first, then converges to high reward.*
 

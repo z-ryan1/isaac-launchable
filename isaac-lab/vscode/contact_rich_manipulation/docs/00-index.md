@@ -4,7 +4,7 @@ This lab will walk learners through training and deploying an RL policy to solve
 
 This module should take about 1 hour to complete. 
 
-```{figure} ../images/gear-assembly.gif
+```{figure} images/gear-assembly.gif
 ```
 
 ## Learning Objectives

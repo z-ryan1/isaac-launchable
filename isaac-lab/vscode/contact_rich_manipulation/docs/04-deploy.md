@@ -4,7 +4,7 @@ In this lesson, we will explore how to deploy a trained reinforcement learning (
 
 We will cover the necessary steps to integrate the trained policy into an Isaac ROS application, allowing the robot to perform tasks in a physical environment.
 
-```{figure} ../images/sim-assembly.gif
+```{figure} images/sim-assembly.gif
 ```
 
 ## Workflow Configuration

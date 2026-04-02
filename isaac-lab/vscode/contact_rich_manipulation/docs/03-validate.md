@@ -18,7 +18,7 @@ You can monitor training progress in real-time using TensorBoard.
     http://localhost:6006
     ```
 
-    ![Trained policy TensorBoard](../images/trained_tensorboard.png)
+    ![Trained policy TensorBoard](images/trained_tensorboard.png)
 
 ## Validate Policy Performance in Isaac Lab
 
@@ -33,6 +33,6 @@ ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/pla
 
 A successfully trained policy should be able to insert all 3 gears with the gear base in different locations.
 
-![Gear insertion policy validation in Isaac Lab](../images/isaaclab_gear_insertion_validation.gif)
+![Gear insertion policy validation in Isaac Lab](images/isaaclab_gear_insertion_validation.gif)
 
 You can stop the simulation by pressing `Ctrl+C` in the terminal.
