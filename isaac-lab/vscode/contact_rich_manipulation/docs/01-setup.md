@@ -76,7 +76,7 @@ On **Brev**, use port forwarding for **6006** (see **`03-validate.md`**) instead
 ```console
 $ISAACLAB/isaaclab.sh -p $ISAACLAB/scripts/reinforcement_learning/rsl_rl/play.py \
     --task Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0 \
-    --num_envs 4 --checkpoint /path/to/model.pt --livestream 2
+    --num_envs 4 --checkpoint /workspace/policy/model.pt --livestream 2
 ```
 
 Replace **`/path/to/model.pt`** with a **`model_<iteration>.pt`** inside the dated run folder under **`$ISAACLAB/logs/rsl_rl/gear_assembly_ur10e/`** (see **`03-validate.md`**).

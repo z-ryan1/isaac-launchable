@@ -37,6 +37,7 @@ COPY --chown=isaac-sim:isaac-sim ./README.md ${WORKSPACE_DIR}/README.md
 COPY --chown=isaac-sim:isaac-sim ./settings.json ${WORKSPACE_DIR}/.vscode/settings.json
 COPY --chown=isaac-sim:isaac-sim ./tasks.json ${WORKSPACE_DIR}/.vscode/tasks.json
 COPY --chown=isaac-sim:isaac-sim ./contact_rich_manipulation/ ${WORKSPACE_DIR}/contact_rich_manipulation/
+COPY --chown=isaac-sim:isaac-sim ./policy/ ${WORKSPACE_DIR}/policy/
 
 
 RUN code-server \

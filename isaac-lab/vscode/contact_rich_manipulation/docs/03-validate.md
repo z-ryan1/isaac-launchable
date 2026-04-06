@@ -24,13 +24,13 @@ http://localhost:6006
 
 The policy performance can be validated by deploying it in Isaac Lab by running following command.
 
-Set **`CHECKPOINT_PT`** to the full path of your trained weights (RSL-RL saves **`model_<iteration>.pt`** inside a timestamped subdirectory under **`/workspace/logs/rsl_rl/gear_assembly_ur10e/`**—use **`ls`** or the training log line to locate the file).
+A pre-trained policy is included in this environment at `/workspace/policy/model.pt`. You can also point to a checkpoint from your own training run (RSL-RL saves `model_<iteration>.pt` inside a timestamped subdirectory under `/workspace/logs/rsl_rl/gear_assembly_ur10e/`).
 
 ```bash
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/play.py \
     --task Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0 \
     --num_envs 4 \
-    --checkpoint "${CHECKPOINT_PT}" \
+    --checkpoint /workspace/policy/model.pt \
     --livestream 2
 ```
 
