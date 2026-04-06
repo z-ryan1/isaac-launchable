@@ -18,8 +18,7 @@ Then follow the **Web Viewer for Isaac Sim UI** instructions below once the app 
 You can run any of the Isaac Lab scripts with the streaming Isaac Sim experience with the following command:
 
 ```console
-cd /workspace/isaaclab
-./isaaclab.sh -p scripts/tutorials/00_sim/create_empty.py --livestream 2
+$ISAACLAB/isaaclab.sh -p $ISAACLAB/scripts/tutorials/00_sim/create_empty.py --livestream 2 --enable_cameras
 ```
 
 To run any other Isaac Lab commands, simply append the same argument as shown above: `--livestream 2`.
