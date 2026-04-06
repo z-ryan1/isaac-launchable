@@ -1,8 +1,14 @@
 # Overview
 
-This lab will walk learners through training an RL policy to solve a contact-rich manipulation task in simulation. Deployment on a real robot will be discussed but not demonstrated.
+This launchable includes the GTC26 course materials for **Train and Deploy Contact-Rich Robot Manipulation Skills**. The lab walks you through training a reinforcement learning policy for a **UR10e** with a **Robotiq 2F140** gripper to insert gears in simulation, then validating that policy in Isaac Lab. Deployment on a real robot is discussed but not demonstrated here.
 
-This module should take about 1 hour to complete. 
+Course documents in this workspace live at **`/workspace/contact_rich_manipulation/docs/`** (or `contact_rich_manipulation/docs/` relative to the VS Code workspace). Read them in order:
+
+1. **`01-setup.md`** — environment, web viewer, terminal, command quick reference  
+2. **`02-train.md`** — RL background, environment configuration, training (including full-scale headless runs)  
+3. **`03-validate.md`** — TensorBoard and `play.py` validation  
+4. **`04-deploy.md`** — pointers to Isaac ROS deployment docs  
+5. **`05-conclusion.md`** — recap and next steps  
 
 ![Gear assembly demonstration](images/gear-assembly.gif)
 

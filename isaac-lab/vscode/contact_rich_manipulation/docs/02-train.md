@@ -448,12 +448,12 @@ First, launch the training with a small number of environments and visualization
 
 ```bash
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py \
-    --task Isaac-Deploy-GearAssembly-UR10e-2F140-ROS-Inference-v0 \
+    --task Isaac-Deploy-GearAssembly-UR10e-2F140-v0 \
     --num_envs 4 \
     --livestream 2
 ```
 
-This will stream to the Isaac Sim viewer where you can observe the training process in real-time.
+This streams to the Isaac Sim viewer so you can observe training in real time.
 
 **What to Expect**: In the early stages of training, you should see the robots moving around with the gears grasped by the grippers, but they won't be successfully inserting the gears yet. This is expected behavior as the policy is still learning. Once you've verified the environment looks correct, stop the training (Ctrl+C) and proceed to full-scale training.
 
@@ -478,7 +478,7 @@ This command will:
 - Record videos every 5000 steps to monitor training progress
 - Save videos with 800 frames each
 
-Training typically takes ~12-24 hours for a robust insertion policy. The videos will be saved in the logs directory and can be reviewed to assess policy performance during training.
+Training typically takes ~12-24 hours for a robust insertion policy. The videos will be saved under the run’s log directory and can be reviewed to assess policy performance during training. RSL-RL writes to **`${ISAACLAB}/logs/rsl_rl/gear_assembly_ur10e/<timestamp_run>/`** for this task family; the console prints the exact **`[INFO] Logging experiment in directory:`** path when training starts.
 
 > **Note**: GPU Memory Considerations: The default configuration uses 256 parallel environments, which should work on most modern GPUs (e.g., RTX 3090, RTX 4090, A100). For better sim-to-real transfer performance, you can increase `solver_position_iteration_count` from 4 to 196 for more realistic contact simulation, but this requires a larger GPU (e.g., RTX PRO 6000 with 40GB+ VRAM).
 
