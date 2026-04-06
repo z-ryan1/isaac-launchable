@@ -9,14 +9,12 @@ You can monitor training progress in real-time using TensorBoard.
 In a terminal, run:
 
 ```bash
-${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir /workspace/logs/rsl_rl/gear_assembly_ur10e --bind_all
+${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir /workspace/policy --bind_all
 ```
 
-Use the **`--logdir`** path that contains your run’s event files. For the gear-assembly UR10e tasks, logs usually live under **`/workspace/logs/rsl_rl/gear_assembly_ur10e/`**; training also prints **`[INFO] Logging experiment in directory:`** with the exact folder. **`--bind_all`** is included so TensorBoard listens on all interfaces (on **NVIDIA Brev**, forward port **6006** to the instance, then open the URL your environment provides—`http://localhost:6006` on your laptop only works if that port is forwarded).
+This points to the pre-trained policy logs bundled in this environment. If you have run your own training, replace `/workspace/policy` with your run’s log directory — for the gear-assembly tasks this will be under `/workspace/logs/rsl_rl/gear_assembly_ur10e/`; training prints `[INFO] Logging experiment in directory:` with the exact path. On Brev, open port **6006** in your instance settings to access TensorBoard in a browser.
 
-Navigate to the following address in a web browser to visualize the training metrics:
-
-http://localhost:6006
+Once running, open `http://<your-brev-instance-ip>:6006` in a browser to see the training metrics.
 
 ![Trained policy TensorBoard](images/trained_tensorboard.png)
 

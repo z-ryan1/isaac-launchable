@@ -10,12 +10,10 @@ This lesson is based on the official Isaac Lab gear assembly tutorial. For compl
 
 ![Untrained policy visualization](images/untrained_viz.gif)
 
-Before diving into the technical details, lets to visualize the task and the state of the policy at the start of training:
+Before diving into the technical details, run this to visualize a single robot and get a feel for the task:
 
 ```bash
-${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py \
-    --task Isaac-Deploy-GearAssembly-UR10e-2F140-v0 \
-    --num_envs 4 --livestream 2
+${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Deploy-GearAssembly-UR10e-2F140-v0 --num_envs 1 --livestream 2
 ```
 
 **Visual indicators during training:**
