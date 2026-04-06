@@ -9,10 +9,10 @@ You can monitor training progress in real-time using TensorBoard.
 In a terminal, run:
 
 ```bash
-${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir ${ISAACLAB}/logs/rsl_rl/gear_assembly_ur10e --bind_all
+${ISAACLAB}/isaaclab.sh -p -m tensorboard.main --logdir /workspace/logs/rsl_rl/gear_assembly_ur10e --bind_all
 ```
 
-Use the **`--logdir`** path that contains your run’s event files. For the gear-assembly UR10e tasks, logs usually live under **`${ISAACLAB}/logs/rsl_rl/gear_assembly_ur10e/`**; training also prints **`[INFO] Logging experiment in directory:`** with the exact folder. **`--bind_all`** is included so TensorBoard listens on all interfaces (on **NVIDIA Brev**, forward port **6006** to the instance, then open the URL your environment provides—`http://localhost:6006` on your laptop only works if that port is forwarded).
+Use the **`--logdir`** path that contains your run’s event files. For the gear-assembly UR10e tasks, logs usually live under **`/workspace/logs/rsl_rl/gear_assembly_ur10e/`**; training also prints **`[INFO] Logging experiment in directory:`** with the exact folder. **`--bind_all`** is included so TensorBoard listens on all interfaces (on **NVIDIA Brev**, forward port **6006** to the instance, then open the URL your environment provides—`http://localhost:6006` on your laptop only works if that port is forwarded).
 
 Navigate to the following address in a web browser to visualize the training metrics:
 
@@ -24,7 +24,7 @@ http://localhost:6006
 
 The policy performance can be validated by deploying it in Isaac Lab by running following command.
 
-Set **`CHECKPOINT_PT`** to the full path of your trained weights (RSL-RL saves **`model_<iteration>.pt`** inside a timestamped subdirectory under **`${ISAACLAB}/logs/rsl_rl/gear_assembly_ur10e/`**—use **`ls`** or the training log line to locate the file).
+Set **`CHECKPOINT_PT`** to the full path of your trained weights (RSL-RL saves **`model_<iteration>.pt`** inside a timestamped subdirectory under **`/workspace/logs/rsl_rl/gear_assembly_ur10e/`**—use **`ls`** or the training log line to locate the file).
 
 ```bash
 ${ISAACLAB}/isaaclab.sh -p ${ISAACLAB}/scripts/reinforcement_learning/rsl_rl/play.py \

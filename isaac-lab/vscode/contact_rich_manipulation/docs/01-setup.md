@@ -66,7 +66,7 @@ Training often takes on the order of **12–24 hours**. RSL-RL logs under **`${I
 **TensorBoard** (after logs exist):
 
 ```console
-$ISAACLAB/isaaclab.sh -p -m tensorboard.main --logdir $ISAACLAB/logs/rsl_rl/gear_assembly_ur10e --bind_all
+$ISAACLAB/isaaclab.sh -p -m tensorboard.main --logdir /workspace/logs/rsl_rl/gear_assembly_ur10e --bind_all
 ```
 
 On **Brev**, use port forwarding for **6006** (see **`03-validate.md`**) instead of assuming **`http://localhost:6006`** on your laptop reaches the instance.
